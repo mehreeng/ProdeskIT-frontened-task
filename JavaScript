@@ -1,0 +1,12 @@
+function calculateTip() {
+  const bill = parseFloat(document.getElementById("billAmount").value);
+  const tip = parseFloat(document.getElementById("tipPercent").value);
+
+  if (isNaN(bill) || isNaN(tip) || bill < 0 || tip < 0) {
+    alert("Please enter valid positive numbers.");
+    return;
+  }
+
+  const total = bill + (bill * tip / 100);
+  document.getElementById("totalAmount").innerText = "$" + total.toFixed(2);
+}
